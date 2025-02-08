@@ -23,7 +23,7 @@ Expected output:
 4. Schindler's List (1993) - Avergae rating: 7.83 ★
 5. Pulp Fiction (1994) - Avergae rating: 7.17 ★'''
 
-def get_movies_list():
+def get_movies_lists(): #task 1
     movie_list = []  # List to store movie details
     while True:
         title = input("Write the title of the movie: (or write 'done' to finish) ")
@@ -40,16 +40,20 @@ def get_movies_list():
     
     return movie_list
 
-def calculate_average_rating(ratings):
+def calculate_average_rating(ratings): #task 2
     average = sum(ratings) / len(ratings)  # Calculate the average by summing and dividing by the number of ratings
     return average
 
-movies = get_movies_list() 
+movies = get_movies_lists() 
 
-#  Display the movie details along with the average rating
-for movie in movies:
-    title, release_year, ratings = movie
-    average_rating = calculate_average_rating(ratings)
-    
-    # Display movie details and the average rating
-    print(f"{title} ({release_year}) - Average rating: {average_rating:.2f}")
+# Function to display movies with average ratings of 6 or more
+def display_movies(movies):
+    print("\nMovies with average rating 6.0 or higher:")
+    for movie in movies:
+        title, year, ratings = movie  # Unpack the movie tuple
+        average_rating = calculate_average_rating(ratings)  # Calculate the average rating
+        if average_rating >= 6.0:  # If the average rating is 6.0 or higher
+          print(f"Title: {title}, Year: {year}, Average Rating: {average_rating:.2f}")  # Display the movie details
+
+movies = display_movies(movies)
+print(movies)
