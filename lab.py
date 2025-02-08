@@ -40,8 +40,16 @@ def get_movies_list():
     
     return movie_list
 
-# Get the list of movies from the user
-movies = get_movies_list()
+def calculate_average_rating(ratings):
+    average = sum(ratings) / len(ratings)  # Calculate the average by summing and dividing by the number of ratings
+    return average
 
-# Print the movie list
-print(movies)
+movies = get_movies_list() 
+
+#  Display the movie details along with the average rating
+for movie in movies:
+    title, release_year, ratings = movie
+    average_rating = calculate_average_rating(ratings)
+    
+    # Display movie details and the average rating
+    print(f"{title} ({release_year}) - Average rating: {average_rating:.2f}")
