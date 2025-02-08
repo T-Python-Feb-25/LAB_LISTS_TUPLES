@@ -29,3 +29,11 @@ movies = [
 
 filteredMovies = calculatingAvarageRatings(movies)
 displayMovies(filteredMovies)
+
+
+
+'''
+this is the first Python lab in the Course
+Feb7, 2025
+By Mohammed Albushaier
+'''
