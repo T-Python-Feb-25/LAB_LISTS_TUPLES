@@ -13,7 +13,7 @@ def movieRatings(movies:list):
                     final = round(sum / len(y), 2)
                 if final > 6.0:
                     count += 1
-                    print(f"{count}. {tuplee[0]}-({tuplee[1]}) - Average Rating: {final} ★")
+                    print(f"{count}. {tuplee[0]}-({tuplee[1]})- Average Rating: {final} ★")
 
 
 movies = [
