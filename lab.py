@@ -24,18 +24,24 @@ Expected output:
 5. Pulp Fiction (1994) - Avergae rating: 7.17 ★'''
 
 def get_movies_list():
-    
-    movie_list = []
+    movie_list = []  # List to store movie details
     while True:
-        title = input("Write the title of the movie: (or write 'done' to finish)")
-        if title.lower == 'done':
-            break 
-        release_year = int(input("When was it released?"))
-        ratings = input("What were the user ratings for it? (seperate with commas)")
-        movie_list.append((title, release_year, ratings))  # Add the movie details as a tuple to the movie list
+        title = input("Write the title of the movie: (or write 'done' to finish) ")
+        if title.lower() == 'done':  # Check if the user wants to finish
+            break
+        release_year = int(input("When was it released? "))  # Get the release year as an integer
+        ratings_input = input("What were the user ratings for it? (separate with commas) ")
+        
+        # Convert the ratings input to a list of integers
+        ratings = [int(rating) for rating in ratings_input.split(',')]
+        
+        # Append the movie details (title, release year, ratings) as a tuple to the movie list
+        movie_list.append((title, release_year, ratings))
+    
     return movie_list
 
-# Main program starts here
-movies = get_movies_list()  # Get the list of movies from the user
-#display_movies(movies)  # Display the filtered list of movies with average rating >= 6.0
+# Get the list of movies from the user
+movies = get_movies_list()
+
+# Print the movie list
 print(movies)
