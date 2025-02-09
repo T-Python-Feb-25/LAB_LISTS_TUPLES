@@ -16,6 +16,7 @@ for movie in movies:
   if average <= 6:
     continue
   else:
+    movies.sort(reverse=True)
     print(f"{name} ({year}) - Avergae rating: {average:.2f} ★")
 
 
